@@ -28,7 +28,24 @@ const Navbar = () => {
 
 
        </ul>
+       <div className='flex items-center gap-6'>
+        <img src={assets.search_icon} alt="" className='w-5 cursor-pointer' />
+        <div className='group relative'>
+            <img className='w-5 cursor-pointer' src={assets.user_icon} alt="" />
+            <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
+                <div className='flex flex-col gap-2 w-36 py-3 px-4 big-slate-100 text-gray-500 rounded'>
+                    <p className='cursor-pointer hover:text-black'>My Profile</p>
+                    <p className='cursor-pointer hover:text-black'>Orders</p>
+                    <p className='cursor-pointer hover:text-black'>Logout</p>
 
+                </div>
+
+            </div>
+
+        </div>
+        <link to='/cart' className='relative'>
+        </link>
+       </div>
         </div>
   )
 }
