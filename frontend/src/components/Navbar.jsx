@@ -3,6 +3,9 @@ import {assets} from '../assets/assets'
 import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
+
+    const [visible, setVisible] = useState(false);
+
   return (
     <div className='flex items-center justify-between py-4 font medium'>
 
@@ -47,8 +50,14 @@ const Navbar = () => {
         <img src={assets.cart_icon} alt="" className='w-5 min-w-5' />
         <p className='absolute right-[-5px] bottom-[-5px] w-4 text-centre leading-4 bg-black text-white aspect-square rounded-full text-[8px]'></p>
         </link>
-        <img src={assets.menu_icon} alt="" className='w-5 cursor-pointer sm:hidden' />
+        <img onClick={()=>setVisible(true)} src={assets.menu_icon} alt="" className='w-5 cursor-pointer sm:hidden' />
        </div>
+        {/* Sidebar menu for small screens   */}
+         <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0' }`}>
+           <div className='flex flex-col text-gray-600'>
+
+           </div>
+         </div>
         </div>
   )
 }
