@@ -55,10 +55,14 @@ const Navbar = () => {
         {/* Sidebar menu for small screens   */}
          <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0' }`}>
            <div className='flex flex-col text-gray-600'>
-              <div className='flex items-center gap-4 p-3'>
+              <div onClick={()=>setVisible(false)} className='flex items-center gap-4 p-3'>
              <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />
              <p>Back</p>
               </div>
+              <NavLink to='/'>HOME</NavLink>
+              <NavLink to='/collection'>COLLECTION</NavLink>
+              <NavLink to='/about'>ABOUT</NavLink>
+              <NavLink to='/contact'>CONTACT</NavLink>
            </div>
          </div>
         </div>
