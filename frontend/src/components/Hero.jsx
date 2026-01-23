@@ -19,7 +19,9 @@ const Hero = () => {
 
         </div>
     </div>
+        {/* Hero Right Section */}
+        </div>
   )
 }
 
-export default Hero
+export default Hero;
