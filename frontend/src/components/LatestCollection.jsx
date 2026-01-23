@@ -4,6 +4,7 @@ import { ShopContext } from '../context/ShopContext.jsx';
 const LatestCollection = () => {
 
 const {products} = useContext(ShopContext);
+const [latestProducts, setLatestProducts] = useState([]);
 
   return (
     <div className='my-10'>
