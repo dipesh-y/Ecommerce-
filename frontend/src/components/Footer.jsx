@@ -19,6 +19,19 @@ const Footer = () => {
          <li>Privacy Policy</li>
         </ul>
     </div>
+
+    <div>
+     <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
+     <ul className='flex flex-col gap-1 text-gray-600'>
+      <li>Phone: +91 9876543210</li>
+      <li>Email: info@example.com</li>
+     </ul>
+
+    </div>
+       <hr />
+   <p className='py-5 text-sm text-center'>
+    Copyright © 2024 YourCompany. All rights reserved.
+   </p>
         </div>
     </div>
   )
