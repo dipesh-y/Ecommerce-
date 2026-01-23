@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx'
 import Collection from './pages/Collection.jsx'
 import About from './pages/About.jsx'
 import Navbar from './components/Navbar.jsx'  
+import Footer from './components/Footer.jsx'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
        <Route path='/placeorder' element={<PlaceOrder/>} />
        <Route path='/order' element={<Orders/>} />
       </Routes>
+      <Footer/>
     </div>
   )
 }
