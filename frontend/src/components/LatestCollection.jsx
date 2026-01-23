@@ -19,6 +19,17 @@ useEffect(() => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quis alias nesciunt voluptatem ullam voluptatum natus, totam voluptate quibusdam aspernatur quidem beatae, incidunt quo nihil, ab ducimus debitis possimus ea.
             </p>
         </div>
+      
+      {/*Rendering Products*/}
+      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
+
+        {latestProducts.map((item,index)=>(
+            <ProductItem />
+            
+        ))
+    } 
+      </div>
+
     </div>
   )
 }
