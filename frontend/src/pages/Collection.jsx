@@ -13,8 +13,34 @@ const [showFilters, setShowFilters] = React.useState(false);
       FILTERS
     </p>
      {/* Category Filter*/}
-      <div className= {` border border-gray-300 pl-5 py-3 mt-6`}>
-
+      <div className= {` border border-gray-300 pl-5 py-3 mt-6 ${showFilters ? '' : 'hidden sm:block'}`}>
+        <p className='font-medium mb-3 text-sm'>CATEGORY</p>
+        <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
+       <p className='flex gap-2'>
+        <input className='w-3' type="checkbox" value={'Men'} /> MEN
+       </p>
+       <p className='flex gap-2'>
+        <input className='w-3' type="checkbox" value={'Women'} /> WOMEN
+       </p>
+       <p className='flex gap-2'>
+        <input className='w-3' type="checkbox" value={'Kids'} /> KIDS 
+       </p>
+        </div>
+      </div>
+      {/* SubCategory Filter*/}
+      <div className= {` border border-gray-300 pl-5 py-3 my-5 ${showFilters ? '' : 'hidden sm:block'}`}>
+        <p className='font-medium mb-3 text-sm'>TYPE</p>
+        <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
+       <p className='flex gap-2'>
+        <input className='w-3' type="checkbox" value={'Topwear'} /> TOPWEAR
+       </p>
+       <p className='flex gap-2'>
+        <input className='w-3' type="checkbox" value={'Bottomwear'} /> BOTTOMWEAR
+       </p>
+       <p className='flex gap-2'>
+        <input className='w-3' type="checkbox" value={'Winterwear'} /> WINTERWEAR
+       </p>
+        </div>
       </div>
     </div>
 
