@@ -5,7 +5,7 @@ import {assets} from '../assets/assets';
 
 const Collection = () => {
 
-const { products } = useContext(ShopContext);
+const { products, search, setSearch, showSearch, setShowSearch } = useContext(ShopContext);
 const [showFilters, setShowFilters] = React.useState(false);
 const [filterProducts, setFilterProducts] = useState([]);
 const [category, setCategory] = useState([]);
@@ -34,6 +34,10 @@ const toggleSubCategory = (e) => {
 
 const applyFilter = () => {
   let productsCopy = products.slice();
+
+  if (showSearch && search) {
+    productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
+  }
 
   if (category.length > 0) {
     productsCopy = productsCopy.filter(item => category.includes(item.category));
@@ -70,7 +74,7 @@ setFilterProducts(fpCopy);
 useEffect(() => {
   applyFilter();
   // console.log(subCategory);
-}, [category, subCategory ]);
+}, [category, subCategory, search, showSearch]);
 
 useEffect(() => {
   sortProduct();
