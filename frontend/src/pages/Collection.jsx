@@ -5,7 +5,7 @@ const { products } = useContext(ShopContext);
 const [showFilters, setShowFilters] = React.useState(false);
 
   return (
-    <div classname="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
+    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
      
    { /* Filter options */}
     <div className="min-w-60">
@@ -53,10 +53,13 @@ const [showFilters, setShowFilters] = React.useState(false);
         {/* Sort By Dropdown */}
         <select className='border-2 border-gray-300 text-sm px-2'>
           <option value="relavent">Sort By: Relavent</option>
-          <option value="relavent">Sort By: Relavent</option>
-          <option value="relavent">Sort By: Relavent</option>
+          <option value="low-high">Sort By: Low to High</option>
+          <option value="high-low">Sort By: High to Low</option>
         </select>
      </div>
+
+    </div>   {/* <-- THIS CLOSING DIV WAS MISSING */}
+
     </div>
   )
 }
