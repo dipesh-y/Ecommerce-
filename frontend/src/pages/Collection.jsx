@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { use, useContext, useEffect } from 'react'
 import { ShopContext } from '../context/shopContext';
 import Title from '../components/Title';
 import {assets} from '../assets/assets';
@@ -71,6 +71,10 @@ useEffect(() => {
   applyFilter();
   // console.log(subCategory);
 }, [category, subCategory ]);
+
+useEffect(() => {
+  sortProduct();
+}, [sortType]);
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
