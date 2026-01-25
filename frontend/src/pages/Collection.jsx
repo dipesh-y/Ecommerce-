@@ -20,14 +20,22 @@ const toggleCategory = (e) => {
 
 }
 
-const toggleSubCategory = () => {
+const toggleSubCategory = (e) => {
 
   if (subCategory.includes(e.target.value)) {
-    setSubCategory(prev.filter(item => item !== e.target.value));
+    setSubcategory(prev.filter(item => item !== e.target.value));
   }
   else 
   {
-    setSubCategory(prev => [...prev, e.target.value]);
+    setSubcategory(prev => [...prev, e.target.value]);
+  }
+}
+
+const applyFilter = () => {
+  let productsCopy = products.slice();
+
+  if (category.length > 0) {
+    productsCopy = productsCopy.filter(item => category.includes(item.category));
   }
 }
 
@@ -37,7 +45,7 @@ useEffect(() => {
 
 useEffect(() => {
   console.log(subCategory);
-}, [subCategory]);
+}, [subCategory ]);
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
