@@ -9,9 +9,10 @@ const [showFilters, setShowFilters] = React.useState(false);
      
    { /* Filter options */}
     <div className="min-w-60">
-    <p className='my-2 text-xl flex items-center cursor-pointer gap-2'>
+    <p onClick={() => setShowFilters(!showFilters)} className='my-2 text-xl flex items-center cursor-pointer gap-2'>
       FILTERS
-    </p>
+      <img className={`h-3 sm:hidden ${showFilters ? 'rotate-90 ' : ''}`} src={assets.dropdown_icon} alt="" />
+          </p>
      {/* Category Filter*/}
       <div className= {` border border-gray-300 pl-5 py-3 mt-6 ${showFilters ? '' : 'hidden sm:block'}`}>
         <p className='font-medium mb-3 text-sm'>CATEGORY</p>
@@ -43,7 +44,19 @@ const [showFilters, setShowFilters] = React.useState(false);
         </div>
       </div>
     </div>
+      
+     {/*Right side*/}
+     <div className="flex-1">
 
+      <div className="flex justify-between text-base sm:text-2xl mb-4">
+        <Title text1={'ALL'} text2={'COLLECTIONS'} />
+        {/* Sort By Dropdown */}
+        <select className='border-2 border-gray-300 text-sm px-2'>
+          <option value="relavent">Sort By: Relavent</option>
+          <option value="relavent">Sort By: Relavent</option>
+          <option value="relavent">Sort By: Relavent</option>
+        </select>
+     </div>
     </div>
   )
 }
