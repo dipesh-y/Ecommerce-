@@ -20,10 +20,24 @@ const toggleCategory = (e) => {
 
 }
 
+const toggleSubCategory = () => {
+
+  if (subCategory.includes(e.target.value)) {
+    setSubCategory(prev.filter(item => item !== e.target.value));
+  }
+  else 
+  {
+    setSubCategory(prev => [...prev, e.target.value]);
+  }
+}
 
 useEffect(() => {
   setFilterProducts(products);
 }, [products]);
+
+useEffect(() => {
+  console.log(category);
+}, [category]);
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
@@ -39,13 +53,13 @@ useEffect(() => {
         <p className='font-medium mb-3 text-sm'>CATEGORY</p>
         <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
        <p className='flex gap-2'>
-        <input className='w-3' type="checkbox" value={'Men'} /> MEN
+        <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory} /> MEN
        </p>
        <p className='flex gap-2'>
-        <input className='w-3' type="checkbox" value={'Women'} /> WOMEN
+        <input className='w-3' type="checkbox" value={'Women'} onChange={toggleCategory} /> WOMEN
        </p>
        <p className='flex gap-2'>
-        <input className='w-3' type="checkbox" value={'Kids'} /> KIDS 
+        <input className='w-3' type="checkbox" value={'Kids'} onChange={toggleCategory} /> KIDS 
        </p>
         </div>
       </div>
