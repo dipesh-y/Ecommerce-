@@ -51,11 +51,11 @@ let fpCopy = filterProducts.slice();
 
 switch (sortType) {
   case "low-high":
-    fpCopy.sort((a, b) => a.price - b.price);
+    setFilterProducts(fpCopy.sort((a, b) => a.price - b.price));
     break;
-    
+
   case "high-low":
-    fpCopy.sort((a, b) => b.price - a.price);
+    setFilterProducts(fpCopy.sort((a, b) => b.price - a.price));
     break;
   default:
     break;
