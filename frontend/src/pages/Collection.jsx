@@ -36,8 +36,8 @@ useEffect(() => {
 }, [products]);
 
 useEffect(() => {
-  console.log(category);
-}, [category]);
+  console.log(subCategory);
+}, [subCategory]);
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
@@ -68,13 +68,13 @@ useEffect(() => {
         <p className='font-medium mb-3 text-sm'>TYPE</p>
         <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
        <p className='flex gap-2'>
-        <input className='w-3' type="checkbox" value={'Topwear'} /> TOPWEAR
+        <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory} /> TOPWEAR
        </p>
        <p className='flex gap-2'>
-        <input className='w-3' type="checkbox" value={'Bottomwear'} /> BOTTOMWEAR
+        <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory}  /> BOTTOMWEAR
        </p>
        <p className='flex gap-2'>
-        <input className='w-3' type="checkbox" value={'Winterwear'} /> WINTERWEAR
+        <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory} /> WINTERWEAR
        </p>
         </div>
       </div>
