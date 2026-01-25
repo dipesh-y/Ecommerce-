@@ -1,8 +1,29 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { ShopContext } from '../context/shopContext';
+import Title from '../components/Title';
+import {assets} from '../assets/assets';
 
 const Collection = () => {
+
 const { products } = useContext(ShopContext);
 const [showFilters, setShowFilters] = React.useState(false);
+const [filterProducts, setFilterProducts] = useState([]);
+const [category, setCategory] = useState([]);
+const [subCategory, setSubcategory] = useState([]);
+
+const toggleCategory = (e) => {
+ if (category.includes(e.target.value)) {
+  setCategory(prev=> prev.filter(item => item !== e.target.value));
+ } else {
+  setCategory([...prev, e.target.value]);
+ }
+
+}
+
+
+useEffect(() => {
+  setFilterProducts(products);
+}, [products]);
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
@@ -58,10 +79,18 @@ const [showFilters, setShowFilters] = React.useState(false);
         </select>
      </div>
 
-    </div>   {/* <-- THIS CLOSING DIV WAS MISSING */}
+      {/* Map Products */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
+        {filterProducts.map((item,index) => (
+          <ProductItem key={index} name={item.name} id={item.id} price={item.price} image={item.image} />
+        ))
+      }
+    </div>
+    </div>   
 
     </div>
   )
 }
 
 export default Collection
+ 
